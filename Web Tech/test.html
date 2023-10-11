@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app=angular.module("Myapp",["ngRoute"]);
+        app.config(function($routeProvider){
+            $routeProvider.when('/support',{
+                templateUrl:"support.html"
+            })
+            .when('/contact',{
+                templateUrl:"contact.html"
+            })
+            
+        });
+        app.controller("MyController", function($scope) {
+            // Your controller logic goes here if needed.
+        });
+    </script>
+</head>
+<body ng-app="Myapp" ng-controller="MyController">
+    <nav>
+        <ul type="none" style="display:flex;justify-content: space-between;">
+            <li ><a href="#!support" style="text-decoration:none">Support</a></li>
+            <li><a href="#!contact" style="text-decoration:none">Contact</a></li>
+            <li><a href="/account" style="text-decoration:none">Account</a></li>
+            <li><a href="/Blog">Blog</a></li>
+            <li><a href="/themes">Themes</a></li>
+        </ul>
+    </nav>
+    <div ng-view>
+        <!--display the content Here-->
+    </div>
+</body>
+</html>

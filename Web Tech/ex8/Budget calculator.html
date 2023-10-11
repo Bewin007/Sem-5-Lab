@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="budgetApp">
+<head>
+    <title>Budget Calculator</title>
+    <style>
+        body {
+            /* text-align: center; */
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            /* justify-content: center; */
+            height: 100vh;
+            margin: 0;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .row label {
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .row input {
+            width: 60px;
+        }
+        .output {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .output p {
+            margin: 0 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="budgetController">
+        <center>
+        <h1 style="background-color: black; color: white;">Budget Calculator</h1>
+        <div >
+            
+            <p for="totalAmount">Total Amount to Manage:</p>
+            <input type="number" id="totalAmount" ng-model="totalAmount">
+
+        </div>
+        <div style="margin: 10px;">
+            <label for="roomRent">Room Rent (%)</label>
+            <input type="number" id="roomRent" ng-model="roomRentPercentage">
+            <label for="accessories">Accessories (%)</label>
+            <input type="number" id="accessories" ng-model="accessoriesPercentage">
+            <label for="emergency">Emergency (%)</label>
+            <input type="number" id="emergency" ng-model="emergencyPercentage">
+            <label for="saving">Saving (%)</label>
+            <input type="number" id="saving" ng-model="savingPercentage">
+        </div>
+        <button ng-click="calculateBudget()">Evaluate My Money</button>
+        <div class="output" style="margin: 10px;">
+            <p>Room Rent: {{ roomRentAmount }}</p>
+            <p>Accessories: {{ accessoriesAmount }}</p>
+            <p>Emergency: {{ emergencyAmount }}</p>
+            <p>Saving: {{ savingAmount }}</p>
+            <p ng-if="error">{{ error }}</p>
+        </div>
+    </div>
+</center>
+    <script>
+        var app = angular.module('budgetApp', []);
+
+        app.controller('budgetController', function ($scope) {
+            $scope.calculateBudget = function () {
+                $scope.error = "";
+
+                if (!$scope.totalAmount) {
+                    $scope.error = "Please enter a valid total amount.";
+                    return;
+                }
+
+                var totalAmount = parseFloat($scope.totalAmount);
+
+                $scope.roomRentAmount = (totalAmount * $scope.roomRentPercentage) / 100;
+                $scope.accessoriesAmount = (totalAmount * $scope.accessoriesPercentage) / 100;
+                $scope.emergencyAmount = (totalAmount * $scope.emergencyPercentage) / 100;
+                $scope.savingAmount = (totalAmount * $scope.savingPercentage) / 100;
+
+                var totalAllocated = $scope.roomRentAmount + $scope.accessoriesAmount + $scope.emergencyAmount + $scope.savingAmount;
+
+                if (totalAllocated !== totalAmount) {
+                    $scope.error = "Total allocated amount does not match the total amount to manage!";
+                }
+            };
+        });
+    </script>
+</body>
+</html>

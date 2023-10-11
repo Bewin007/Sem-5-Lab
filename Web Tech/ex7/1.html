@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cake shop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                var n=parseInt($('#c1').val());
+                var cake1=n*300;
+                var a=parseInt($('#c2').val());
+                var cake2=a*300;
+                var b=parseInt($('#c3').val());
+                var cake3=b*300;
+                var i=parseInt($('#c4').val());
+                var cake4=i*300;
+                var order=cake1 + cake2 + cake3 + cake4;
+                $('#o1').val("Rs."+ order);
+            })
+            
+
+        })
+    </script>
+    <style>
+        *{
+            margin:0px;
+            
+        }
+        
+        h1{
+            
+            background-color:rgb(238, 98, 17);
+            color:white;
+        }
+           
+        .b5{
+            word-spacing:300px;
+            
+        }
+        .order{
+            color:rgb(69, 77, 143);
+            font-weight: bold;
+            padding-left: 500px;
+        }
+        #c1,#c2,#c3,#c4{
+            width: 550px;
+            border-width: 3px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        #btn{
+            background-color: rgb(17, 215, 230);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1><center>CAKE SHOP</center></h1>
+    <div>
+        <img src="https://www.theflowerspoint.com/data/cache/images/cakes/rainbow-cake/rainbow-round-cake-441x441.jpg" width="400px" height="280px">
+        <img src="https://www.fnp.com/images/pr/l/v20221205202745/chocolate-rose-designer-cake-1-kg_1.jpg" width="380px" height="280px">
+        <img src="https://faridabadcake.com/wp-content/uploads/2023/03/luscious-choco-vanilla-cake.jpg" width="380px" height="280px">
+        <img src="https://www.cakehut.in/image/cache/catalog/2021%20cake%20photos/Double%20Chocolatee-600x600w.jpg.webp" width="340px" height="280px">
+    </div>
+    <div class="b1"></div>
+    
+    <div class="b2"></div>
+ 
+    <div class="b3"></div>
+    <div class="b4"></div>
+    <div class="b5">
+        <label><b>Rainbow-Cake-Rs.300</b></label>
+        <label><b>Brown-Cake-Rs.300</b></label>
+        <label><b>White-Cake-Rs.300</b></label>
+        <label><b>Black-Cake-Rs.300</b></label>
+    </div>
+    <br>
+    <br>
+    <center><h2>ORDER CAKE</h2></center>
+    <div class="order">
+        
+        <br>
+        <label>Rainbow cake[Quantity]</label>
+        <br>
+        <input type="text" id="c1" >
+        <br>
+        <br>
+        <label>Brown cake[Quantity]</label>
+        <br>
+        <input type="text" id="c2">
+        <br>
+        <br>
+        <label>White cake[Quantity]</label>
+        <br>
+        <input type="text" id="c3">
+        <br>
+        <br>
+        <label>Black cake[Quantity]</label>
+        <br>
+        <input type="text" id="c4">
+        <br>
+        <br>
+
+        <button id="btn" >ORDER</button>
+        <br>
+        <br>
+        <label>TOTAL BILL:</label> <input type="text" id="o1">
+
+    </div>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+    *{
+        margin:0px;
+    }
+    ul{
+        list-style-type: none;
+        background-color:lightblue;
+        padding:0px;
+        overflow:hidden;  
+    }
+    li{
+        float:left;  
+        width:20%;  
+        text-align:center;
+        font-size:xx-large;
+    }
+    li a{
+        display:block;
+        text-decoration: none;
+        text-align: center;
+    }
+    li a:hover{
+        background-color: blue;
+        color:white;
+    }
+    .signin{
+        width: 35%;
+        height: 26%;
+        text-align:center;
+        border:1px solid black;
+        border-radius:6%;
+        background-color: pink;
+    }
+    .signup{
+        height: 40%;
+        width: 35%;
+        background-color:blue ;
+        border-radius: 6%;
+        padding-top: 5%;
+    }
+    .signin,.signup{
+        float: left;
+        margin-top: 10%;
+        margin-left: 11.5%;
+        text-align: center;
+    }
+    html,body {
+        height:100%;
+    }
+    .banner{
+        background-image: url(css.jpg);
+        background-color: red;
+        background-repeat: no repeat;
+        background-size:cover;
+        height:100%;
+    }
+
+    h3{
+        padding-bottom: 2%;
+        text-align: center;
+        font-size: larger;
+        font-weight: bolder;
+        color:antiquewhite;
+    }
+    #h1{
+        text-align : "center";
+        color:antiquewhite;
+    }
+</style>
+</head>
+<body>
+    <ul>
+        <li><a href ="#home">Home</a></li>
+        <li><a href = "#products">Products</a></li>
+        <li><a href = "#Services">Services</a></li>
+        <li><a href = "#Contact">Contact</a></li>
+        <li><a href = "#Software">Software</a></li>
+    </ul>
+    <div class="banner">
+            <div class="signin">
+                <form action ="" method = "post">
+                    <h3 align = "center">Sign In</h3>
+                        <label for = "name">User Name</label>
+                        <input type = "text" id = "name" name = "user" required placeholder="Enter Name"><br><br>
+                        <label for="pass">Password</label>
+                        <input type = "password" name = "pass" pattern="(?=*/d)(?=*[a-z])(?=,*[A-Z],{8,} )"required placeholder="Enter Password"><br><br>
+                        <input type = "submit" onclick = "alert('submit')" value = "submit">
+                </form>
+            </div>
+
+            <div class="signup">
+                <form action="" method="post">
+                    <h3 id = "h1">Sign Up</h3>
+                        <label for = "name">User Name</label>
+                        <input type = "text" id = "name" name = "user" required placeholder="Enter Name"><br><br>
+                        <label for = "name">Email </label>
+                        <input type = "text" id = "email" name = "user" required placeholder="Enter Email"><br><br>
+                        <label for="pass">Password</label>
+                        <input type = "password" name = "pass" pattern="(?=*/d)(?=*[a-z])(?=,*[A-Z],{8,} )"required placeholder="Enter Password"><br><br>
+                        <input type = "submit" onclick = "alert('submit')" value = "submit">
+                </form>
+            </div>
+        </div>
+</body>
+</html>

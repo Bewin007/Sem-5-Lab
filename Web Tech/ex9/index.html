@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Routing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <style>
+        /* Add CSS to style the navigation bar */
+        #e {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333; /* Background color for the navbar */
+        text-align: center; /* Center the list items */
+    }
+
+    #e li {
+        display: inline-block; /* Display list items in a line */
+        margin-right: 10px; /* Add some spacing between list items */
+    }
+
+    #w a {
+        display: block;
+        color: white; /* Text color for the links */
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #w a:hover {
+        background-color: #555; /* Background color on hover */
+    }
+    </style>
+    <script>
+        var app = angular.module("myApp", ["ngRoute"])
+        app.controller("mycontrol", function() {})
+        app.config(function($routeProvider) {
+            $routeProvider.when("/", {
+                templateUrl: "pd.html"
+            })
+            .when("/pd", {
+                templateUrl: "pd.html"
+            })
+            .when("/ad", {
+                templateUrl: "ad.html"
+            })
+            .when("/ind", {
+                templateUrl: "ind.html"
+            })
+            .when("/lg", {
+                templateUrl: "lg.html"
+            })
+            .when("/sig", {
+                templateUrl: "sig.html"
+            })
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="mycontrol">
+<div class="fixed">
+    <ul id="e">
+        <li id="w"><a href="#!pd">Personal Details</a></li>
+        <li id="w"><a href="#!ad">Academic Details</a></li>
+        <li id="w"><a href="#!ind">Internship Details</a></li>
+        <li id="w"><a href="#!lg">LogIn</a></li>
+        <li id="w"><a href="#!sig">SignUp</a></li>
+    </ul>
+</div>
+<div ng-view></div>
+</body>
+</html>

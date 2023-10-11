@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <a href="#!personal-details">Personal Details</a>
+    <br>
+    <a href="#!academic">Academic Details</a>
+    <br>
+    <a href="#!projects">Project / Internship Details</a>
+    <br>
+    <a href="#!login">Login Page</a>
+    <br>
+    <a href="#!signup">Sign Up Page</a>
+    <div ng-view></div>
+
+    <script>
+        const app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl : "personal-details.htm"
+                })
+                .when("/academic", {
+                    template: `<h1>Academic Details</h1>
+                    <p>
+                        <!-- Include academic details here -->
+                    </p>`
+                })
+                .when("/projects", {
+                    template: `<h1>Project / Internship Details</h1>
+                    <p>
+                        <!-- Include project/internship details here -->
+                    </p>`
+                })
+                .when("/login", {
+                    template: `<h1>Login Page</h1>
+                    <p>
+                        <!-- Include login form here -->
+                    </p>`
+                })
+                .when("/signup", {
+                    template: `<h1>Sign Up Page</h1>
+                    <p>
+                        <!-- Include sign up form here -->
+                    </p>`
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".add").click(function(){
+    $("div").html("<h1>dwadwa</h1>");
+  });
+
+  $(".rem").click(function(){
+    $("div").children("h1").last().remove();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+<button class="add">Add h1</button>
+<button class="rem">Remove h1</button>
+<div></div>
+
+</body>
+</html>

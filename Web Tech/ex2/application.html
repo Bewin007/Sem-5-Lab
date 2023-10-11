@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <link rel = "stylesheet" href = "ex2.css">
+</head>
+<body>
+    <hr>
+    <h2 align="center" style = "color: blue">Company Name</h2>
+    <hr>
+    <a href = "media.html" style="margin-left: 620px;">Media Elements</a>
+    <a href = "Application.html" style="margin-left: 60px;">Application Form</a>
+    <hr>
+    <fieldset>
+        <legend align="center">Form Title</legend>
+        <form action="">
+           <table width="50%" align="center">
+               <tr>
+                   <td width="50%">
+                       <label for="">Name</label>
+                   </td>
+                   <td width="50%">
+                       <input type="text" name="name">
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <label for="">Application Number</label>
+                   </td>
+                   <td>
+                       <input type="text" name="applno">
+                   </td>
+                </tr>
+                   <tr>
+                    <td width="50%">
+                        <label for="pass">Password:</label>
+                    </td>
+                    <td width="50%">
+                        <input type = "password" id = pass name ="password" pattern = "(? = *\d) (? =.*[a-z]) (?=.*[A-Z]),{8,}" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="birthday">Date of Birth:</label>
+                    </td>
+                    <td>
+                        <input type = "date" id ="Birthday" name = "birthday"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <label for="age">Age:</label>
+                    </td>
+                    <td width="50%">
+                        <input type="text" name="age"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="number">Mobile Number:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="number"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <label for="email">Email:</label>
+                    </td>
+                    <td width="50%">
+                        <input type="text" name="email"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender"> Gender:</label>
+                    </td>
+                    <td>
+                        <input type = "radio" id ="Male" name = "male_gen" value="Male">
+                        <label for = "Male">Male</label>
+                        <input type = "radio" id ="Female" name = "female_gen" value ="Female">
+                        <label for = "Female">Female</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <label for="comment">Address:</label>
+                    </td>
+                    <td width="50%">
+                        <textarea id = "comment" name = "comment" rows = "3" cols = "20"></textarea>
+                    </td>
+                </tr>
+                <tr width="100%">
+                        <td>
+                            <label>Languages Known</label>
+                        </td>
+                        <td width="100%">
+                            <input type="checkbox">
+                            <label>English</label>
+                            <input type="checkbox">
+                            <label>Tamil</label>
+                            <input type="checkbox">
+                            <label>Malayalam</label>
+                            <input type="checkbox">
+                            <label>Hindi</label>
+                            <input type="checkbox">
+                            <label>Telugu</label>
+                        </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <label for="Course">Select your Course</label>
+                    </td>
+                    <td width="50%">
+                        <select name = "Course" id = "cor">
+                            <option value = "CSE">B.Tech Computer Science and Engineering</option>
+                            <option value = "CSE">B.Tech Electronic Communication and Engineering</option>
+                            <option value = "CSE">B.Tech Electrical and electronics Engineering</option>
+                            <option value = "CSE">B.Tech Civil Engineering</option>
+                            <option value = "CSE">B.Tech Mechanical Engineering</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="img">Upload your Photo</label>
+                    </td>
+                    <td>
+                        <input type="file" id = "img" name="img" accept="image/*">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input type ="range" id ="vol" name = "vol" min="0"  max="50"> 
+                        <label>50% Uploading compeleted</label>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input type = "button" onclick = "alert" value = "submit" />
+                    </td>
+                </tr>
+           </table>
+       </form>
+   </fieldset>
+</body>
+</html>

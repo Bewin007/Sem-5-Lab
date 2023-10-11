@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Loan EMI Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .result-heading {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .result-bar {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function formatCurrency(amount) {
+            return '₹' + amount.toFixed(2);
+        }
+
+        function calculateEMI() {
+            var loanAmount = parseFloat(document.getElementById("loanAmountInput").value);
+            var annualInterestRate = parseFloat(document.getElementById("annualInterestRate").value) / 100;
+            var monthlyInterestRate = annualInterestRate / 12;
+            var tenureInYears = parseFloat(document.getElementById("tenureInYears").value);
+            var tenureInMonths = tenureInYears * 12;
+
+            var emi = (loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, tenureInMonths)) / (Math.pow(1 + monthlyInterestRate, tenureInMonths) - 1);
+            var totalRepayment = emi * tenureInMonths;
+            var totalInterest = totalRepayment - loanAmount;
+
+            document.getElementById("loanAmount").innerHTML = formatCurrency(loanAmount);
+            document.getElementById("emiResult").innerHTML = formatCurrency(emi);
+            document.getElementById("totalRepaymentResult").innerHTML = formatCurrency(totalRepayment);
+            document.getElementById("totalInterestResult").innerHTML = formatCurrency(totalInterest);
+        }
+    </script>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Bank Loan EMI Calculator</h1>
+
+        <label for="loanAmountInput">Loan Amount:</label>
+        <input type="number" id="loanAmountInput" placeholder="Loan Amount" onkeyup="calculateEMI()">
+
+        <label for="annualInterestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="annualInterestRate" placeholder="Annual Interest Rate" onkeyup="calculateEMI()">
+
+        <label for="tenureInYears">Tenure in Years:</label>
+        <input type="number" id="tenureInYears" placeholder="Tenure in Years" onkeyup="calculateEMI()">
+
+        <div class="result-heading">Loan Amount</div>
+        <div class="result-bar" id="loanAmount"></div>
+
+        <div class="result-heading">EMI</div>
+        <div class="result-bar" id="emiResult"></div>
+
+        <div class="result-heading">Total Repayment</div>
+        <div class="result-bar" id="totalRepaymentResult"></div>
+
+        <div class="result-heading">Total Interest</div>
+        <div class="result-bar" id="totalInterestResult"></div>
+    </div>
+</body>
+</html>

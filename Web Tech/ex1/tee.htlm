@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Swedish Political Geography</title>
+            <style>
+                ul.navigation {
+                margin: 0;
+                padding: 4px;
+                }
+                ul.navigation li {
+                display: inline;
+                margin-right: 5px;
+                }
+            </style>
+        </head>
+        <body>
+        <font face="verdana" size=“10”>Swedish Political Geography</font>
+        <ul class="navigation">
+            <li><font face="verdana" size=“10”>Borders</font></li>
+            <li><font face="verdana" size=“10”>Government</font></li>
+        </ul>
+    </body>
+</html>

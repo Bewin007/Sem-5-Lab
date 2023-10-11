@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Inventory System</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    input{
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 3px;
+    }
+    th {
+      border:solid;
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div ng-app="productInventoryApp" ng-controller="ProductController as productCtrl">
+    <h1 style="color: blue;">Product Inventory</h1>
+
+    <form ng-submit="productCtrl.addProduct()">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" ng-model="productCtrl.newProduct.name" required><br>
+
+      <label for="productPrice">Product Price:</label>
+      <input type="number" id="productPrice" ng-model="productCtrl.newProduct.price" required><br>
+
+      <button type="submit" style="padding: 10px;border-radius: 10px; margin-bottom: 10px;">Add Product</button>
+    </form>
+
+    <table style="border: solid;">
+      <tr style="background-color: green;">
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Action</th>
+      </tr>
+      <tr ng-repeat="product in productCtrl.products">
+        <td>{{ product.name }}</td>
+        <td>Rs. {{ product.price }}</td>
+        <td><a href="#" ng-click="productCtrl.deleteProduct($index)">Delete</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('productInventoryApp', []);
+
+    app.controller('ProductController', function () {
+      var vm = this;
+
+      vm.products = [];
+      vm.newProduct = {};
+
+      vm.addProduct = function () {
+        if (vm.newProduct.name && vm.newProduct.price) {
+          vm.products.push({
+            name: vm.newProduct.name,
+            price: vm.newProduct.price
+          });
+
+          vm.newProduct = {}; // Clear the input fields
+        }
+      };
+
+      vm.deleteProduct = function (index) {
+        vm.products.splice(index, 1);
+      };
+    });
+  </script>
+</body>
+</html>

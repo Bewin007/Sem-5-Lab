@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Operations</title>
+    <script>
+        function add(){
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var sum = num1+num2;
+            a = document.getElementById('result').innerHTML="Result:"+sum;
+            alert(a)
+        }
+
+        function sub(){
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var sub = num1-num2;
+            a = document.getElementById('result').innerHTML="Result:"+sub;
+            alert(a)
+        }
+
+        function div(){
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var div = num1/num2;
+            a= document.getElementById('result').innerHTML="Result:"+div;
+            alert(a)
+        }
+
+        function mul(){
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var mul = num1*num2;
+            a= document.getElementById('result').innerHTML="Result:"+mul;
+            alert(a)
+        }
+
+        function clear(){
+            document.getElementById('num1').value='';
+            document.getElementById('num2').value='';
+            // document.getElementById('result').value=''
+            alert(a)
+            
+        }
+    </script>
+    <style>
+        
+        h3{
+            margin-left:60px;
+        }
+        #b1{
+            border-radius: 4px;
+        }
+        .con{
+            width:500px;
+            height:200px;
+            border:2px solid black;
+            align-items:center;
+            margin-left:450px;
+            margin-right:200px;
+            text-align: center;
+            position: relative;
+        }
+        #result{
+            width:150px;
+            height:25px;
+            margin-left:50px;   
+            /* border:1px solid black; */
+            position: absolute;
+            bottom:10px;
+            top:150px;
+            text-align: left;
+        }
+        .Clear{
+            position: absolute;
+            display: inline-block;
+            bottom:10px;
+            right:170px;
+            bottom:28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h3>Simple Calculator</h3>
+        <input type="text" id="num1" height="20px;" required placeholder="Number e.g. 1337">&nbsp;&nbsp;&nbsp;
+        <input type="text" id="num2" height="20px;" required placeholder="Number e.g. 2108">
+        <br><br>
+        <button id="b1" onclick="add()" style="color:white; background-color: blue;">+ Add</button>&nbsp;&nbsp;
+        <button id="b1" onclick="sub()" style="color:white; background-color: blue;">- Subtract</button>&nbsp;&nbsp;
+        <button id="b1" onclick="div()" style="color:white; background-color: blue;">/ Divide</button>&nbsp;&nbsp;
+        <button id="b1" onclick="mul()" style="color:white; background-color: blue;">* Multiply</button>
+        <br><br>
+        <div id="result"></div>
+        <!-- <button type="reset" class="Clear" style="color:red;" onclick="clear()">Clear</button> -->
+    </div>
+</body>
+</html>

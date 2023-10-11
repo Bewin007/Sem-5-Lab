@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cake Order</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #cake-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .cake-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .item {
+        text-align: center;
+    }
+
+    .item img {
+        max-width: 100%;
+        height: auto;
+    }
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <div style="background-color: red;text-align: center;">
+        <h1>Cake shop</h1>
+    </div>
+
+    <div class="grid-container">
+        <div class="item">
+            <img src="OIP.jpeg"><br>
+            <label>Brown Cake-Rs. 200</label>
+        </div>
+        <div class="item">
+            <img src="OPA.jpeg"><br>
+            <label>Milk Cake-Rs. 250</label>
+        </div>
+        <div class="item">
+            <img src="https://th.bing.com/th/id/OIP.L94yAbZa4nPhKHgdIDZlwwHaHa?w=198&h=198&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+            <br><label>Black Forest Cake-Rs. 350</label>
+        </div>
+        <div class="item">
+            <img src="download.jpeg"><br>
+            <label>Color Cake-Rs. 300</label>
+        </div>
+    
+    </div>
+
+    <div class="center-content">
+  <h1>Order Cake</h1></div>
+  <div class="center-content">
+  <div id="cake-options">
+    <div class="cake-option">
+      <label for="chocolate">Color Cake - Rs 300</label>
+      <input type="number" id="chocolate" min="0" value="0" onchange="calculateTotal()">
+    </div>
+    <div class="cake-option">
+      <label for="vanilla">Milk Cake - Rs 250</label>
+      <input type="number" id="vanilla" min="0" value="0" onchange="calculateTotal()">
+    </div>
+    <div class="cake-option">
+      <label for="strawberry">Black Forest Cake - Rs 350</label>
+      <input type="number" id="strawberry" min="0" value="0" onchange="calculateTotal()">
+    </div>
+    <div class="cake-option">
+      <label for="lemon">Brown Cake - Rs 200</label>
+      <input type="number" id="lemon" min="0" value="0" onchange="calculateTotal()">
+    </div>
+  </div>
+ 
+</div>
+
+
+
+  <p style="text-align: center;">Total Cost: $<span id="total">0</span></p>
+  <script>
+    function calculateTotal() {
+      const chocolateQuantity = parseInt(document.getElementById('chocolate').value);
+      const vanillaQuantity = parseInt(document.getElementById('vanilla').value);
+      const strawberryQuantity = parseInt(document.getElementById('strawberry').value);
+      const lemonQuantity = parseInt(document.getElementById('lemon').value);
+      
+      const chocolatePrice = 300;
+      const vanillaPrice = 200;
+      const strawberryPrice = 350;
+      const lemonPrice = 200;
+      
+      const totalCost = (chocolateQuantity * chocolatePrice) +
+                        (vanillaQuantity * vanillaPrice) +
+                        (strawberryQuantity * strawberryPrice) +
+                        (lemonQuantity * lemonPrice);
+      
+      document.getElementById('total').textContent = totalCost;
+    }
+  </script>
+</body>
+</html>
