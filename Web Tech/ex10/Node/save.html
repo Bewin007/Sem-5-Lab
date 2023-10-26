@@ -1,0 +1,48 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved User Data</title>
+</head>
+<body>
+    <h2 align="center">Saved User Data</h2>
+    <div id="userData">
+        <!-- Display saved user data here -->
+    </div>
+
+    <script>
+        // Fetch saved user data from the server
+        fetch('/display')
+            .then(response => response.json())
+            .then(data => {
+                const userDataDiv = document.getElementById('userData');
+                if (data && data.length > 0) {
+                    data.forEach(user => {
+                        const userDiv = document.createElement('div');
+                        userDiv.innerHTML = `
+                            <p>Name: ${user.Name}</p>
+                            <p>Password: ${user.Password}</p>
+                            <p>Age: ${user.Age}</p>
+                            <p>Mobile Number: ${user.MobileNumber}</p>
+                            <p>Email: ${user.Email}</p>
+                            <p>Gender: ${user.Gender}</p>
+                            <p>State: ${user.State}</p>
+                            <hr>
+                        `;
+                        userDataDiv.appendChild(userDiv);
+                    });
+                } else {
+                    userDataDiv.textContent = 'No saved user data found.';
+                }
+            })
+            .catch(error => {
+                const userDataDiv = document.getElementById('userData');
+                userDataDiv.textContent = 'Error fetching user data from the server.';
+            });
+    </script>
+</body>
+</html>

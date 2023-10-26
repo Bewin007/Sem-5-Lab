@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="ex10.css">
+</head>
+<body>
+<h2 align="center">User Registration</h2>
+<form action="/save" method="POST">
+<div>
+Name: <input type="text" required name="name">
+</div>
+<div>
+Password: <input type="text" required name="pass">
+</div>
+<div>
+Age: <input type="number" required name="age">
+</div>
+<div>
+Mobile number: <input type="text" required name="num">
+</div>
+
+<div>
+    Email: <input type="email" required name="email">
+    </div>
+    <div>
+    Gender: <input required type="radio" name="gender" value="Male">
+    <label>Male</label>
+    <input required type="radio" name="gender" value="Female">
+    <label>Female</label>
+    </div>
+    <div>
+    <label>State</label>
+    <select name="state">
+    <option value="Kerala">Kerala</option>
+    <option value="TamilNadu">TamilNadu</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    </select>
+    </div>
+    <div>
+    <input class="but" type="submit">
+    </div>
+    </form>
+    </body>
+    </html>
