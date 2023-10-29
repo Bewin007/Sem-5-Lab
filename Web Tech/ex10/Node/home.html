@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<link rel="stylesheet" href="ex10.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- <link rel="stylesheet" href="./home.css"> -->
 </head>
 <body>
-<h2 align="center">User Registration</h2>
-<form action="/save" method="POST">
-<div>
-Name: <input type="text" required name="name">
-</div>
-<div>
-Password: <input type="text" required name="pass">
-</div>
-<div>
-Age: <input type="number" required name="age">
-</div>
-<div>
-Mobile number: <input type="text" required name="num">
+    <div style="position:absolute;">
+    <h3 style="align-items: center;text-align: center; background-color: brown; color: white;">User Registration Form</h3>
+    <form style="background-color: antiquewhite;padding: 10px;" action="/register" method="POST" style="align-items: center;">  
+        Name: <input type="text" name="name"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        Age: <input type="text" name="age"><br><br>
+        Mobile Number: <input type="text" name="mobilenumber"><br><br>
+        Email: <input type="email" name="email"><br><br>
+        Gender: <input type="radio" name="gender" value="Male">
+        <label for="male">Male</label> &nbsp;&nbsp;
+        <input type="radio" name="gender" value="Female">
+        <label for="female">Female</label><br><br>
+        State: <select name="state">
+        <option value="tamil Nadu">Tamil Nadu</option>
+        <option value="kerala">kerala</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Mumbai">Mumbai</option>
+        </select><br><br>
+        <div style="text-align: center;">
+            <button type="submit">Submit</button>
+        </div>
+    </form><br><br>
+    <a href="/view">View All Students</a>
 </div>
 
-<div>
-    Email: <input type="email" required name="email">
-    </div>
-    <div>
-    Gender: <input required type="radio" name="gender" value="Male">
-    <label>Male</label>
-    <input required type="radio" name="gender" value="Female">
-    <label>Female</label>
-    </div>
-    <div>
-    <label>State</label>
-    <select name="state">
-    <option value="Kerala">Kerala</option>
-    <option value="TamilNadu">TamilNadu</option>
-    <option value="Andhra Pradesh">Andhra Pradesh</option>
-    </select>
-    </div>
-    <div>
-    <input class="but" type="submit">
-    </div>
-    </form>
-    </body>
-    </html>
+
+</body>
+</html>
